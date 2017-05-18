@@ -7,9 +7,11 @@ def digraphWrite(data, name):
 
 	# We're rounding all the values to the neaerest 100
 
+	# We need to define the colours first for them to work
 	for i in data.index:
 		row = data.iloc[i]
 		temp = ""
+
 
 		if(row['Deed'] == "died"):
 			temp = "\n	\""+row['Player']+"\" [style=filled fillcolor=\"tomato\"];"
@@ -18,6 +20,7 @@ def digraphWrite(data, name):
 
 		file.write(temp)
 
+	# Then we can define the graph edges
 	for i in data.index:
 		row = data.iloc[i]
 		temp = ""
